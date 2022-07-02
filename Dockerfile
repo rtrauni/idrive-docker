@@ -1,7 +1,7 @@
 # build:
 #  docker build -t baroka/idrive .
 
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 RUN mkdir -p /home/backup
 
