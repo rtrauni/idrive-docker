@@ -13,7 +13,7 @@ RUN chmod a+x entrypoint.sh
 
 # Install packages
 # iproute2 for /bin/ip, which is used to find/generate a unique host ID
-RUN apt-get update && apt-get -y install vim unzip curl iproute2 build-essential sqlite3 perl perl-doc libdbi-perl libdbd-sqlite3-perl libfile-spec-native-perl
+RUN apt-get update && apt-get -y install apt-utils vim unzip curl iproute2 build-essential sqlite3 perl perl-doc libdbi-perl libdbd-sqlite3-perl libfile-spec-native-perl
 
 #RUN apt-get update && apt-get install -yq tzdata && ln -fs /usr/share/zoneinfo/Europa/Vienna /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
