@@ -15,13 +15,13 @@ RUN chmod a+x entrypoint.sh
 # iproute2 for /bin/ip, which is used to find/generate a unique host ID
 RUN apt-get update && apt-get -y install vim unzip curl iproute2 build-essential sqlite3 perl perl-doc libdbi-perl libdbd-sqlite3-perl libfile-spec-native-perl
 
-RUN apt-get update && apt-get install -yq tzdata && ln -fs /usr/share/zoneinfo/Europa/Vienna /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+#RUN apt-get update && apt-get install -yq tzdata && ln -fs /usr/share/zoneinfo/Europa/Vienna /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 # Timezone (no prompt)
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
-#RUN echo "Europe/Madrid" > /etc/timezone
-#RUN rm -f /etc/localtime
-#RUN dpkg-reconfigure -f noninteractive tzdata
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+RUN echo "Europe/Vienna" > /etc/timezone
+RUN rm -f /etc/localtime
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Install IDrive
 # Runs also at each entrypoint run
